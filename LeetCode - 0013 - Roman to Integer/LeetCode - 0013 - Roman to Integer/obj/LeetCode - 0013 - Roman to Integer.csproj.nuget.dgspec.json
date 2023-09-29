@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samue\\Documents\\GitHub\\leetcode-0013-roman-to-integer-csharp\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer.csproj": {}
+    "J:\\Files\\Working\\Repos\\LeetCode\\leetcode-0013-roman-to-integer-csharp\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samue\\Documents\\GitHub\\leetcode-0013-roman-to-integer-csharp\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer.csproj": {
+    "J:\\Files\\Working\\Repos\\LeetCode\\leetcode-0013-roman-to-integer-csharp\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samue\\Documents\\GitHub\\leetcode-0013-roman-to-integer-csharp\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer.csproj",
+        "projectUniqueName": "J:\\Files\\Working\\Repos\\LeetCode\\leetcode-0013-roman-to-integer-csharp\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer.csproj",
         "projectName": "LeetCode - 0013 - Roman to Integer",
-        "projectPath": "C:\\Users\\samue\\Documents\\GitHub\\leetcode-0013-roman-to-integer-csharp\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer.csproj",
+        "projectPath": "J:\\Files\\Working\\Repos\\LeetCode\\leetcode-0013-roman-to-integer-csharp\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer.csproj",
         "packagesPath": "C:\\Users\\samue\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samue\\Documents\\GitHub\\leetcode-0013-roman-to-integer-csharp\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer\\obj\\",
+        "outputPath": "J:\\Files\\Working\\Repos\\LeetCode\\leetcode-0013-roman-to-integer-csharp\\LeetCode - 0013 - Roman to Integer\\LeetCode - 0013 - Roman to Integer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
