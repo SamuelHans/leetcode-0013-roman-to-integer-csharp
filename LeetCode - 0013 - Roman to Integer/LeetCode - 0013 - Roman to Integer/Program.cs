@@ -1,4 +1,8 @@
-﻿namespace LeetCode___0013___Roman_to_Integer
+﻿using System.Reflection.Metadata;
+using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography.X509Certificates;
+
+namespace LeetCode___0013___Roman_to_Integer
 {
     internal class Program
     {
@@ -49,112 +53,195 @@
 
             */
 
+
+
+            //// Method 1 - Slow replacements
+
+            ////var s = "III";
+            ////var s = "LVIII";
+            //var s = "MCMXCIV";
+            //var original = s;
+
+            //var thousands = 0;
+            //var hundreds = 0;
+            //var tens = 0;
+            //var ones = 0;
+
+            //int integerOfS;
+
+            //// Get 1000 digit
+            //while (s.StartsWith("M"))
+            //{
+            //    thousands++;
+            //    s = s.Substring(1);
+            //}
+
+            //// Get if 900
+            //if (s.StartsWith("CM"))
+            //{
+            //    hundreds = 900;
+            //    s = s.Substring(2);
+            //}
+
+            //// Get if 400
+            //if (s.StartsWith("CD"))
+            //{
+            //    hundreds = 400;
+            //    s = s.Substring(2);
+            //}
+
+            //// Get if 500
+            //if (s.StartsWith("D"))
+            //{
+            //    hundreds = 500;
+            //    s = s.Substring(1);
+            //}
+
+            //// Get if 100s
+            //while (s.StartsWith("C"))
+            //{
+            //    hundreds = hundreds + 100;
+            //    s = s.Substring(1);
+            //}
+
+            //// Get if 90
+            //if (s.StartsWith("XC"))
+            //{
+            //    tens = 90;
+            //    s = s.Substring(2);
+            //}
+
+            //// Get if 40
+            //if (s.StartsWith("XL"))
+            //{
+            //    tens = 40;
+            //    s = s.Substring(2);
+            //}
+
+            //// Get if 50
+            //if (s.StartsWith("L"))
+            //{
+            //    tens = 50;
+            //    s = s.Substring(1);
+            //}
+
+            //// Get if 10s
+            //while (s.StartsWith("X"))
+            //{
+            //    tens = tens + 10;
+            //    s = s.Substring(1);
+            //}
+
+            //// Get if 9
+            //if (s.StartsWith("IX"))
+            //{
+            //    ones = 9;
+            //    s = s.Substring(2);
+            //}
+
+            //// Get if 4
+            //if (s.StartsWith("IV"))
+            //{
+            //    ones = 4;
+            //    s = s.Substring(2);
+            //}
+
+            //// Get if 5
+            //if (s.StartsWith("V"))
+            //{
+            //    ones = 5;
+            //    s = s.Substring(1);
+            //}
+
+            //// Get if 1s
+            //while (s.StartsWith("I"))
+            //{
+            //    ones = ones + 1;
+            //    s = s.Substring(1);
+            //}
+
+            //integerOfS = thousands * 1000 + hundreds + tens + ones;
+
+            //Console.WriteLine("The original roman numeral {0} is as an integer {1}", original, integerOfS);
+
+
+
+
+            //Symbol Value
+            //I             1
+            //V             5
+            //X             10
+            //L             50
+            //C             100
+            //D             500
+            //M             1000
+
+            // Method 2 - Faster with switch.
+
             //var s = "III";
             //var s = "LVIII";
             var s = "MCMXCIV";
+            //var s = "IV";
             var original = s;
 
-            var thousands = 0;
-            var hundreds = 0;
-            var tens = 0;
-            var ones = 0;
+            var evaluateNumeralValue = 0;
+            var runningTotal = 0;
+            var highestNumeralValue = 0;
 
-            int integerOfS;
-
-            // Get 1000 digit
-            while (s.StartsWith("M"))
+            for (int i = s.Length; i > 0; i--)
             {
-                thousands++;
-                s = s.Substring(1);
+                evaluateNumeralValue = Converter(s[i-1]);
+                highestNumeralValue = (evaluateNumeralValue > highestNumeralValue) ? evaluateNumeralValue : highestNumeralValue;
+                
+                if (evaluateNumeralValue >= highestNumeralValue)
+                {
+                    runningTotal = runningTotal + evaluateNumeralValue;
+                }
+                else
+                {
+                    runningTotal = runningTotal - evaluateNumeralValue;
+                }
+
+
             }
 
-            // Get if 900
-            if (s.StartsWith("CM"))
+            Console.WriteLine("The original roman numeral {0} is as an integer {1}", original, runningTotal);
+        }
+
+        public static int Converter(char numeral)
+        {
+            var numeralConversion = -1;
+
+
+            switch (numeral)
             {
-                hundreds = 900;
-                s = s.Substring(2);
+                case 'I':
+                    numeralConversion = 1;
+                    break;
+                case 'V':
+                    numeralConversion = 5;
+                    break;
+                case 'X':
+                    numeralConversion = 10;
+                    break;
+                case 'L':
+                    numeralConversion = 50;
+                    break;
+                case 'C':
+                    numeralConversion = 100;
+                    break;
+                case 'D':
+                    numeralConversion = 500;
+                    break;
+                case 'M':
+                    numeralConversion = 1000;
+                    break;
+                default:
+                    numeralConversion = -1;
+                    break;
             }
 
-            // Get if 400
-            if (s.StartsWith("CD"))
-            {
-                hundreds = 400;
-                s = s.Substring(2);
-            }
-
-            // Get if 500
-            if (s.StartsWith("D"))
-            {
-                hundreds = 500;
-                s = s.Substring(1);
-            }
-
-            // Get if 100s
-            while (s.StartsWith("C"))
-            {
-                hundreds = hundreds + 100;
-                s = s.Substring(1);
-            }
-
-            // Get if 90
-            if (s.StartsWith("XC"))
-            {
-                tens = 90;
-                s = s.Substring(2);
-            }
-
-            // Get if 40
-            if (s.StartsWith("XL"))
-            {
-                tens = 40;
-                s = s.Substring(2);
-            }
-
-            // Get if 50
-            if (s.StartsWith("L"))
-            {
-                tens = 50;
-                s = s.Substring(1);
-            }
-
-            // Get if 10s
-            while (s.StartsWith("X"))
-            {
-                tens = tens + 10;
-                s = s.Substring(1);
-            }
-
-            // Get if 9
-            if (s.StartsWith("IX"))
-            {
-                ones = 9;
-                s = s.Substring(2);
-            }
-
-            // Get if 4
-            if (s.StartsWith("IV"))
-            {
-                ones = 4;
-                s = s.Substring(2);
-            }
-
-            // Get if 5
-            if (s.StartsWith("V"))
-            {
-                ones = 5;
-                s = s.Substring(1);
-            }
-
-            // Get if 1s
-            while (s.StartsWith("I"))
-            {
-                ones = ones + 1;
-                s = s.Substring(1);
-            }
-
-            integerOfS = thousands * 1000 + hundreds + tens + ones;
-
-            Console.WriteLine("The original roman numeral {0} is as an integer {1}", original, integerOfS);
+            return numeralConversion;
         }
     }
 }
